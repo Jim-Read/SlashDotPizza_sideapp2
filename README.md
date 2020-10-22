@@ -12,7 +12,7 @@ This API was designed with pizza in mind.  Not every store is on uber eats etc, 
 
 The app makes use of the venv pip package to create a virtual environment. Therefore the package will need to be installed in order to run the app. There after the install instructions are as below:
 
-- Clone the repo: `git clone https://github.com/brucemcclure/demo_app`
+- Clone the repo: `git clone https://github.com/Jim-Read/SlashDotPizza_sideapp2.git`
 - Change directory into the repo: `cd demo_app`
 - Make sure venv is installed: `pip install venv`
 - Create the virtual environment: `python3 -m venv venv`
