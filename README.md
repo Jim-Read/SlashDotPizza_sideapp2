@@ -98,7 +98,6 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 1. A user can create a profile and update their details - username, location, image, add friends and favourite pizzas or brag about one pizza
 2. A pizza can have comments and likes with the users rating and overall rating - a user can comment and like or not other comments
 3. A user can populate a friends list and see their likes/comments/brags/friends/pizzas
-4. A category has many fines ( A fine can be regarded as a reward/fine ).
 
 
 ![](docs/db/9_slashdotpizza_diagram.png)
