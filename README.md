@@ -101,7 +101,7 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 4. A category has many fines ( A fine can be regarded as a reward/fine ).
 
 
-![](docs/db/slashdotpizza_diagram.png)
+![](docs/db/9_slashdotpizza_diagram.png)
 
 ## WIP Endpoints
 
