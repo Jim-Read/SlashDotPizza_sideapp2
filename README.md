@@ -31,7 +31,7 @@ Once it has pulled from master it installs the dependencies form requirements.tx
 
 ### Known missing wire frames
 
-- Display current 5 highest ranks pizzas in your area / on app / overall
+- Display current 5 highest ranks pizzas in your area / on app / overall 
 
 ### Landing page
 
@@ -92,3 +92,22 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 - User is able to upvote or downvote a comment.
 
 ![](docs/wire-frames/8_pizza_comments_mob_web_page.png)
+
+## WIP DB Schema
+
+1. A user can create a profile and update their details - username, location, image, add friends and favourite pizzas or brag about one pizza
+2. A pizza can have comments and likes with the users rating and overall rating - a user can comment and like or not other comments
+3. A user can populate a friends list and see their likes/comments/brags/friends/pizzas
+4. A category has many fines ( A fine can be regarded as a reward/fine ).
+
+
+![](docs/db/slashdotpizza_diagram.png)
+
+## WIP Endpoints
+
+I havent worked out how to display this properly so you get an image for now
+
+![](docs/db/10_endpoints.png)
+
+
+

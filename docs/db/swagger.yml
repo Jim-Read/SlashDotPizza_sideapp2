@@ -1,0 +1,239 @@
+## General description 
+
+openapi: 3.0.0
+info:
+  title: SlashDot Pizza
+  description: A simple application to view and rate pizzas in your local area
+  version: 0.0.1
+servers:
+  - url: http://
+    description: Optional server description, e.g. Main (production) server
+
+# create paths    
+paths:
+
+# User end points - create user, update location, update image, add friends, add pizza, delete account/friends/pizzas 
+  /users:
+    post:
+      summary: Creates a new user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: Created
+
+  /users/{user_id}/location:
+    put:
+      summary: Allows user to put in their location.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: OK
+   
+  /users/{user_id}:
+    patch:
+      summary: Allows user to upload an image to their profile.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : object
+      responses: 
+        '200':
+          description: OK
+         
+  /users/{user_id}/fav_friends:
+    put:
+      summary: Allows user to add friends to their profile.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : object
+      responses: 
+        '200':
+          description: OK
+                   
+  /users/{user_id}/fav_pizza:
+    put:
+      summary: Allows user to favourite pizzas.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : object
+      responses: 
+        '200':
+          description: OK
+          
+  /users/{user_id}/delete_account:
+    delete:
+      summary: Allows user to delete their account.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : boolean
+      responses: 
+        '200':
+          description: OK
+
+  /users/{user_id}/friends_list:
+    delete:
+      summary: Allows user to delete friends from their favourites list.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : boolean
+      responses: 
+        '200':
+          description: OK 
+          
+  /users/{user_id}/pizza_list:
+    delete:
+      summary: Allows user to delete pizzas from their favourites list.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : boolean
+      responses: 
+        '200':
+          description: OK 
+          
+  /users/{user_id}/friends:
+    get:
+      summary: Returns a users list of friends.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: OK
+          
+  /users/{user_id}/pizza:
+    get:
+      summary: Returns a users list of favourite pizzas.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: OK
+          
+         
+ # Pizza end points - View Pizza, comment on pizza, like a pizza, brag about a pizza, delete comment or likes          
+  /pizza:
+    get:
+      summary: Returns a users list of pizzas at users location.
+      parameters:
+        - name: pizza
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: OK
+          
+  /pizza/{pizza_id}:
+    get:
+      summary: Returns the pizza information/rating/comments/likes.
+      parameters:
+        - name: pizza_id
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: OK
+          
+  /pizza/{pizza_id}/pizza_rating:
+    put:
+      summary: Allows user to rate a pizza
+      parameters:
+        - name: pizza_id
+          in: path
+          required: true
+          schema:
+            type : integer
+      responses: 
+        '200':
+          description: OK
+          
+  /pizza/{pizza_id}/comments:
+    put:
+      summary: Allows user to post comment on a pizza
+      parameters:
+        - name: pizza_id
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: OK
+          
+  /pizza/{pizza_id}/likes:
+    put:
+      summary: Allows user like a pizza or not
+      parameters:
+        - name: pizza_id
+          in: path
+          required: true
+          schema:
+            type : boolean
+      responses: 
+        '200':
+          description: OK
+          
+  /users/{user_id}/brag:
+    put:
+      summary: Allows user to brag about the pizza
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type : string
+      responses: 
+        '200':
+          description: OK
+          
+  /pizza/{pizza_id}/comments/:
+    delete:
+      summary: Allows user to delete comments they have made on a pizza.
+      parameters:
+        - name: pizza_id
+          in: path
+          required: true
+          schema:
+            type : boolean
+      responses: 
+        '200':
+          description: OK 
+  
+  
