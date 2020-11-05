@@ -106,7 +106,7 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 
 I havent worked out how to display this properly so you get an image for now
 
-![](docs/db/10_endpoints.png)
+![](docs/wire-frames/10_endpoints.png)
 
 
 
