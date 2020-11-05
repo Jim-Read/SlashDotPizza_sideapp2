@@ -102,11 +102,15 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 
 ![](docs/db/9_slashdotpizza_diagram.png)
 
+WIP - Relationships 1 to many still to be added on the diagram
+
 ## WIP Endpoints
 
-I havent worked out how to display this properly so you get an image for now
+Minor success for now
 
-![](docs/wire-frames/10_endpoints.png)
+WIP - still need to flesh out the code/tests within the endpoints - basic endpoints created in swagger and hosted for now
+
+https://app.swaggerhub.com/apis-docs/slashdotpizza/SlashDotPizza/0.0.2
 
 
 
