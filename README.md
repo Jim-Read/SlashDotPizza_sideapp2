@@ -14,11 +14,11 @@ The app makes use of the venv pip package to create a virtual environment. There
 
 - Clone the repo: `git clone https://github.com/Jim-Read/SlashDotPizza_sideapp2.git`
 - Change directory into the repo: `cd demo_app`
-- Make sure venv is installed: `pip install venv`
+- Make sure venv is installed: `pip3 install venv`
 - Create the virtual environment: `python3 -m venv venv`
 - Activate the virtual environment: `source venv/bin/activate`
 - Install the dependencies from requirments.txt: `pip3 install -r requirements.txt`
-- Run the app: `python src/main.py`
+- Run the app: `python3 main.py`
 
 
 ## CI/CD
@@ -102,7 +102,7 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 
 ![](docs/db/9_slashdotpizza_diagram.png)
 
-WIP - Relationships 1 to many still to be added on the diagram
+WIP - Relationships: 1 to many, etc still to be added on the diagram
 
 ## WIP Endpoints
 
