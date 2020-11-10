@@ -95,14 +95,21 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 
 ## WIP DB Schema
 
-1. A user can create a profile and update their details - username, location, image, add friends and favourite pizzas or brag about one pizza
-2. A pizza can have comments and likes with the users rating and overall rating - a user can comment and like or not other comments
-3. A user can populate a friends list and see their likes/comments/brags/friends/pizzas
+1.	Users can create an account and store in their details in the user table and create a password which is stored in the user_login_password table
+2.	When a user logs in, the password is checked in the user_login_password table for a match
+3.	A user can store their location in the location table and are able to store many locations for themselves only.
+4.	A user can store many or no users as friends in fav_friends 
+5.	A user can store many or no pizza as favourites in fav_pizza 
+6.	A pizza table is created to store the details about a pizza
+7.	A pizza can have many or no pizza_ratings for it
+8.	A pizza can have many comments or none
+9.	A comment on a pizza can have many likes or none
+
 
 
 ![](docs/db/9_slashdotpizza_diagram.png)
 
-WIP - Relationships: 1 to many, etc still to be added on the diagram
+
 
 ## WIP Endpoints
 
