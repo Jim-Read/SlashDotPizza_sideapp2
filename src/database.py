@@ -1,12 +1,10 @@
-import psycopg2, requests, jsonify, os
-from dotenv import load_dotenv
-load_dotenv()
+from flask_sqlalchemy import SQLAlchemy
+import os
 
-connection = psycopg2.connect(user = os.getenv('DB_USER'),
-                                password = os.getenv('DB_PASSWORD'),
-                                host = os.getenv('DB_HOST'),
-                                port = os.getenv('DB_PORT'),
-                                database = os.getenv('DB_NAME'))
 
-cursor = connection.cursor()
-connection.commit()
+
+def init_db(app):
+    app.config["SQLALCHEMY_DATABASE_URI"] = f"{os.getenv('DB_NAME')}+psycopg2://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    db = SQLAlchemy(app)
+    return db 

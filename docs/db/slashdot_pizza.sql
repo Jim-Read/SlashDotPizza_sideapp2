@@ -1,74 +1,60 @@
-CREATE TABLE "users" (
-  "user_id" int PRIMARY KEY,
-  "user_name" varchar,
-  "email" varchar,
-  "brag" varchar,
-  "user_image" varchar,
-  "location_id" int,
-  "fav_pizza_id" int,
-  "fav_friends_id" int
-);
-
-CREATE TABLE "pizza" (
-  "pizza_id" int PRIMARY KEY,
-  "pizza_name" varchar,
-  "description" text,
-  "price" numeric,
-  "location" int,
-  "pizza_image" varchar,
-  "pizza_rating_id" int,
-  "comment_id" int
-);
-
-CREATE TABLE "comments" (
-  "comment_id" int PRIMARY KEY,
-  "likes_id" int,
-  "comment" varchar
-);
-
-CREATE TABLE "likes" (
-  "likes_id" int PRIMARY KEY,
-  "likes" boolean
-);
-
-CREATE TABLE "fav_pizza" (
-  "fav_pizza_id" int PRIMARY KEY,
-  "pizza_id" int
-);
-
-CREATE TABLE "fav_friends" (
-  "fav_friends_id" int PRIMARY KEY,
-  "user_id" int,
-  "user_name" varchar
-);
-
-CREATE TABLE "locations" (
-  "location_id" int PRIMARY KEY,
-  "location" varchar
-);
-
-CREATE TABLE "pizza_rating" (
-  "pizza_rating_id" int PRIMARY KEY,
-  "user_rating" numeric
-);
-
-CREATE TABLE "user_login_password" (
-  "user" int PRIMARY KEY,
-  "user_id" int,
-  "password" varchar
-);
+CREATE TABLE users(
+  user_id SERIAL UNIQUE PRIMARY KEY, 
+  user_name varchar(20),
+  user_password varchar(20),
+  email varchar(25),
+  brag varchar(100),
+  user_image varchar(300),
+  location text);
 
 
-ALTER TABLE "users" ADD FOREIGN KEY ("location_id") REFERENCES "locations" ("location_id");
+CREATE TABLE fav_pizza (
+  fav_pizza_id SERIAL UNIQUE PRIMARY KEY,
+  user_id int, 
+  pizza_id int,
+  CONSTRAINT userfk FOREIGN KEY (user_id) REFERENCES users (user_id),
+  CONSTRAINT pizzafk FOREIGN KEY (pizza_id) REFERENCES pizzas (pizza_id));
 
-ALTER TABLE "users" ADD FOREIGN KEY ("fav_pizza_id") REFERENCES "fav_pizza" ("fav_pizza_id");
 
-ALTER TABLE "users" ADD FOREIGN KEY ("fav_friends_id") REFERENCES "fav_friends" ("fav_friends_id");
+CREATE TABLE fav_friends (
+  fav_friends_id SERIAL UNIQUE PRIMARY KEY,
+  user_id int,
+  users_friend int,
+  CONSTRAINT userfk1 FOREIGN KEY (user_id) REFERENCES users (user_id),
+  CONSTRAINT userfk2 FOREIGN KEY (user_id) REFERENCES users (user_id));
 
-ALTER TABLE "pizza" ADD FOREIGN KEY ("pizza_rating_id") REFERENCES "pizza_rating" ("pizza_rating_id");
 
-ALTER TABLE "pizza" ADD FOREIGN KEY ("comment_id") REFERENCES "comments" ("comment_id");
+CREATE TABLE pizzas (
+  pizza_id SERIAL UNIQUE PRIMARY KEY, 
+  pizza_name varchar(100),
+  description text,
+  price real,
+  location text,
+  pizza_image varchar);
 
-ALTER TABLE "comments" ADD FOREIGN KEY ("likes_id") REFERENCES "likes" ("likes_id");
 
-ALTER TABLE "user_login_password" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("user_id");
+CREATE TABLE comments (
+  comment_id SERIAL UNIQUE PRIMARY KEY, 
+  pizza_id int,
+  user_id int,
+  comment varchar(255),
+  CONSTRAINT pizzafk FOREIGN KEY (pizza_id) REFERENCES pizzas (pizza_id),
+  CONSTRAINT userfk FOREIGN KEY (user_id) REFERENCES users (user_id));
+
+
+CREATE TABLE likes (
+  likes_id SERIAL UNIQUE PRIMARY KEY,
+  comment_id int,
+  user_id int,
+  likes boolean,
+  CONSTRAINT commentfk FOREIGN KEY (comment_id) REFERENCES comments (comment_id),
+  CONSTRAINT userfk FOREIGN KEY (user_id) REFERENCES users (user_id));
+
+
+CREATE TABLE pizza_rating (
+  pizza_rating_id SERIAL UNIQUE PRIMARY KEY,
+  user_id int,
+  pizza_id int,
+  user_rating float,
+  CONSTRAINT pizzafk FOREIGN KEY (pizza_id) REFERENCES pizzas (pizza_id),
+  CONSTRAINT userfk FOREIGN KEY (user_id) REFERENCES users (user_id));

@@ -1,8 +1,20 @@
-from flask import Flask, request, jsonify
+#Loading environment variables
+from dotenv import load_dotenv
+load_dotenv()
 
-from database import cursor, connection
-
+#Flask application creation
+from flask import Flask
 app = Flask(__name__)
 
-from pizzas import pizzas
-app.register_blueprint(pizzas)
+#Database connection
+from database import init_db
+db = init_db(app)
+
+#Setup Serialization & Deserialization
+from flask_marshmallow import Marshmallow
+ma = Marshmallow(app)
+
+#Controller Registration
+from controllers import registerable_controllers
+for controller in registerable_controllers:
+    app.register_blueprint(controller)
