@@ -8,7 +8,7 @@ class PizzaSchema(ma.SQLAlchemyAutoSchema):
     
     pizza_name = ma.String(required=True, validate=Length(min=1))
     description = ma.String(required=True, validate=Length(min=1))
-    price = ma.String(required=True, validate=Length(min=1))
+    price = ma.Integer(required=True)
     location = ma.String(required=True, validate=Length(min=1))
     pizza_image = ma.String(required=True, validate=Length(min=1))
 

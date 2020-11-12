@@ -5,8 +5,7 @@ class Config(object):
 
     @property
     def SQLALCHEMY_DATABASE_URI(self):
-        #value = os.getenv("DB_URI")
-        value = "postgres+psycopg2://slash:Me1bourne1!@slashdotpizza.cwatzillm6wc.us-east-1.rds.amazonaws.com:5432/slashdotpizza"
+        value = os.getenv("DB_URI")
 
         if not value:
             raise ValueError("DB_URI is not set!")

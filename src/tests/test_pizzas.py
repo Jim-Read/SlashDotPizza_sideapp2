@@ -31,7 +31,7 @@ class TestPizzas(unittest.TestCase):
         response = self.client.post("/pizzas/", json={
             "pizza_name": "Test Pizza",
             "description": "A very hot pizza",
-            "price": "16.22",
+            "price": 16.22,
             "location": "Down back",
             "pizza_image": "http://"
         })
