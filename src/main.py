@@ -30,9 +30,3 @@ def create_app():
         return (jsonify(error.messages), 400)
 
     return app
-
-
-
-    # $ export FLASK_APP=main.py
-    # $ export FLASK_ENV=development
-    # $ flask run
