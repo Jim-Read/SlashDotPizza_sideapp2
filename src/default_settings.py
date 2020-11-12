@@ -30,4 +30,3 @@ elif environment == "testing":
 else:
     app_config = DevelopmentConfig()
 
-# DB_URI=slashdotpizza+psycopg2://slash:Me1bourne1!@slashdotpizza.cwatzillm6wc.us-east-1.rds.amazonaws.com:5432/slashdotpizza
