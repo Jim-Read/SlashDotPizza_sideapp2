@@ -86,7 +86,7 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 
 ### View/create/delete/edit Comments About Pizza
 
-- When a user clicks on comments abotu a pizza they are able to view existing comments about the pizza in greater detail.
+- When a user clicks on comments about a pizza they are able to view existing comments about the pizza in greater detail.
 - User can add pizza to favourite if on webpage - otherwise the mobile user has to back out once and add as favourite
 - User can read all comments. They can add, edit, delete their own comments.
 - User is able to upvote or downvote a comment.
@@ -113,11 +113,32 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 
 ## WIP Endpoints
 
-Minor success for now
-
 WIP - still need to flesh out the code/tests within the endpoints - basic endpoints created in swagger and hosted for now
 
 https://app.swaggerhub.com/apis-docs/slashdotpizza/SlashDotPizza/0.0.2
 
 
+## CLI Commands
 
+The RDS database can be interacted with the following commands from a virtual environment
+
+Ensure the environment variables are set in the terminal session
+
+>>export FLASK_APP=main.py
+>>export FLASK_ENV=development
+
+You can now check to see if the CLI commands are now loaded into the terminal session
+
+>> flask --help
+
+At the bottom you will see the Commands: section and the name that you created
+
+To see more information about what you can do with the command
+
+>> flask (command_name) --help
+
+A new menu will show the commands now available
+
+To use the CLI commands
+>> flask (command_name) (option)
+>> the option will be whatever method you assigned for the command
