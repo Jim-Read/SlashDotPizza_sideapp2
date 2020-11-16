@@ -20,11 +20,11 @@ def pizza_create():
     pizza_fields = pizza_schema.load(request.json)
 
     new_pizza = Pizza()
-    new_pizza.title = pizza_fields["pizza_name"]
-    new_pizza.title = pizza_fields["description"]
-    new_pizza.title = pizza_fields["price"]
-    new_pizza.title = pizza_fields["location"]
-    new_pizza.title = pizza_fields["pizza_image"]
+    new_pizza.pizza_name = pizza_fields["pizza_name"]
+    new_pizza.description = pizza_fields["description"]
+    new_pizza.price = pizza_fields["price"]
+    new_pizza.location = pizza_fields["location"]
+    new_pizza.pizza_image = pizza_fields["pizza_image"]
        
     db.session.add(new_pizza)
     db.session.commit()

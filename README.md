@@ -142,3 +142,47 @@ A new menu will show the commands now available
 To use the CLI commands
 >> flask (command_name) (option)
 >> the option will be whatever method you assigned for the command
+
+## CRUD setup WIP
+
+Setup on Database
+CRUD resource uses SQLAlchemy
+marshmallow is used as the serialisation library
+Project is split into different files (MVC)
+
+1. Able to create new pizzas
+2. Able to edit them
+3. Able to view them all or as a single pizza
+4. Able to delete a pizza
+
+>>other endpoints in process
+
+## Configure, Validation, Testing WIP
+
+Your app needs to be configured in the same format as the library_api ie what is inside `default_settings`
+Your seed, drop and create tables functions are created inside commands.py
+The cli commands are documented in your readme
+There is some evidence of validation in your Schema. 
+Your app has been moved into the factory pattern
+There are 4 tests to test your CRUD. 
+
+1. Default settings file setup and working with .env file
+2. CLI seed, create, drop commands working with DB
+3. Validation is included with user recipe creations 
+4. Factory pattern setup 
+5. Some tests have been setup and working - more to come WIP on new endpoints etc
+
+## Authentication and Authorisation WIP
+
+Example of authorisation
+Example of authentication 
+New end points are documented
+New tests are written for the new end points
+
+## FIle Upload WIP
+
+Evidence of file upload somewhere in your app. 
+File upload is documented in readme and or swagger
+
+
+
