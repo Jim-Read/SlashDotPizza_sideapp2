@@ -13,12 +13,15 @@ The name ?  ever played Everquest back in the early 2000s ? they put a command /
 The app makes use of the venv pip package to create a virtual environment. Therefore the package will need to be installed in order to run the app. There after the install instructions are as below:
 
 - Clone the repo: `git clone https://github.com/Jim-Read/SlashDotPizza_sideapp2.git`
-- Change directory into the repo: `cd demo_app`
+- Change directory into the repo: `cd SlashDotPizza_sideapp2.git/src/`
 - Make sure venv is installed: `pip3 install venv`
 - Create the virtual environment: `python3 -m venv venv`
 - Activate the virtual environment: `source venv/bin/activate`
 - Install the dependencies from requirments.txt: `pip3 install -r requirements.txt`
-- Run the app: `python3 main.py`
+- Setup the Environment Variables: 
+- `export FLASK_APP=hello.py`
+- `export FLASK_ENV=development`
+- `flask run`
 
 
 ## CI/CD
@@ -150,12 +153,12 @@ CRUD resource uses SQLAlchemy
 marshmallow is used as the serialisation library
 Project is split into different files (MVC)
 
-1. Able to create new pizzas
+1. Able to create new recipes
 2. Able to edit them
-3. Able to view them all or as a single pizza
-4. Able to delete a pizza
+3. Able to view them all or as a single recipe
+4. Able to delete a recipe
 
->>other endpoints in process
+to do - other endpoints for cookbooks/ingredients in process
 
 ## Configure, Validation, Testing WIP
 
@@ -170,7 +173,8 @@ There are 4 tests to test your CRUD.
 2. CLI seed, create, drop commands working with DB
 3. Validation is included with user recipe creations 
 4. Factory pattern setup 
-5. Some tests have been setup and working - more to come WIP on new endpoints etc
+
+to do - Some tests have been setup and working - more to come WIP on new endpoints etc
 
 ## Authentication and Authorisation WIP
 
@@ -179,10 +183,21 @@ Example of authentication
 New end points are documented
 New tests are written for the new end points
 
+1. Users are able to create accounts
+2. Users are able to login - password is hashed and assigned a JWT
+3. Users can create a pizza
+4. Users can only delete or update their own pizzas
+
+to do - tests for new endpoints and documented / swagger
+
 ## FIle Upload WIP
 
 Evidence of file upload somewhere in your app. 
 File upload is documented in readme and or swagger
 
+1. S3 bucket created
+2. User is able to upload pictures to a pizza they created
+3. User able to delete image as requested
+4. User can not delete or upload images to any other pizza unless they created it
 
-
+to do - tests and swagger 
