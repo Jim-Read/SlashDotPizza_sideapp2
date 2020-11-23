@@ -10,7 +10,8 @@ class Pizza(db.Model):
     price = db.Column(db.Integer())
     location = db.Column(db.String())
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
+
     pizza_image = db.relationship("PizzaImage", backref="pizza", uselist=False)
 
     def __repr__(self):
-        return f"<pizza {self.pizza_name}>"
+        return f"<pizza = {self.pizza_image}\n{self.pizza_name}\n{self.price}\n{self.description}\n{self.location}>"
