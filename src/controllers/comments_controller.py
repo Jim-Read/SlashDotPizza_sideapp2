@@ -7,7 +7,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from services.auth_service import verify_user
 from sqlalchemy.orm import joinedload
 
-comments = Blueprint('comments', __name__, url_prefix="/pizzas/<int:pizza_id>/comments")
+comments = Blueprint('comments', __name__, url_prefix="/pizzas/<int:pizza_id>/comments/")
 
 @comments.route("/", methods=["GET"])
 def comments_index():

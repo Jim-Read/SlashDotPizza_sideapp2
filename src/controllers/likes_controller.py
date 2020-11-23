@@ -11,6 +11,6 @@ likes = Blueprint('likes', __name__, url_prefix="/pizzas/<int:pizza_id>/comments
 
 @likes.route("/", methods=["GET"])
 def likes_index():
-    #Retrieve all user likes
+    #Retrieve all user likes on a pizza
     likes = Likes.query.options(joinedload("user")).all()
     return jsonify(likes_schema.dump(likes))
