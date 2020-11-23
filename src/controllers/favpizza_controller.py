@@ -14,3 +14,10 @@ def favpizza_index():
     #Retrieve all favourite pizzas for user
     fav_pizzas = FavPizza.query.options(joinedload("user")).all()
     return jsonify(favpizzas_schema.dump(fav_pizzas))
+
+
+#add pizza to favs
+
+#view pizza in favs
+
+#delete pizza in favs

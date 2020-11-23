@@ -14,3 +14,9 @@ def comments_index():
     #Retrieve all user comments
     comments = Comments.query.options(joinedload("user")).all()
     return jsonify(comments_schema.dump(comments))
+
+#add comment to pizza
+
+#modify comment on pizza
+
+#delete comment on pizza

@@ -14,3 +14,10 @@ def likes_index():
     #Retrieve all user likes on a pizza
     likes = Likes.query.options(joinedload("user")).all()
     return jsonify(likes_schema.dump(likes))
+
+
+#add like to comment
+
+#modify like on comment
+
+#delete like on comment

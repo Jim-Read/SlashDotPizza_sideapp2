@@ -14,3 +14,9 @@ def pizzaratings_index():
     #Retrieve all user pizza ratings
     pizzaratings = PizzaRating.query.options(joinedload("user")).all()
     return jsonify(pizzaratings_schema.dump(pizzaratings))
+
+#add rating to a pizza
+
+#view user rating for a pizza
+
+#delete pizza rating for user

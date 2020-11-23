@@ -14,3 +14,10 @@ def friend_index():
     #Retrieve all friends
     fav_friends = FavFriends.query.options(joinedload("user")).all()
     return jsonify(favfriends_schema.dump(fav_friends))
+
+
+#add friend
+
+#view friend
+
+#delete friends
