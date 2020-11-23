@@ -116,9 +116,7 @@ Pizza popup (for web) Displays the picture of the pizza, what its called, descri
 
 ## WIP Endpoints
 
-WIP - still need to flesh out the code/tests within the endpoints - basic endpoints created in swagger and hosted for now
-
-https://app.swaggerhub.com/apis-docs/slashdotpizza/SlashDotPizza/0.0.2
+WIP - sSwagger file in docs update - more to do basic endpoints created
 
 
 ## CLI Commands
@@ -153,10 +151,12 @@ CRUD resource uses SQLAlchemy
 marshmallow is used as the serialisation library
 Project is split into different files (MVC)
 
-1. Able to create new recipes
-2. Able to edit them
-3. Able to view them all or as a single recipe
-4. Able to delete a recipe
+1. Users are able to create accounts
+2. Users are able to login - password is hashed and assigned a JWT
+3. User is unable to upload/create any new pizzas
+4. User is unable to update any profiles unless its their own
+5. User can create/modify a list of friends and pizza
+6. User can give rating on any pizza, comment on any pizza and like or not like any comment
 
 to do - other endpoints for cookbooks/ingredients in process
 
@@ -185,8 +185,11 @@ New tests are written for the new end points
 
 1. Users are able to create accounts
 2. Users are able to login - password is hashed and assigned a JWT
-3. Users can create a pizza
-4. Users can only delete or update their own pizzas
+3. User is unable to upload/create any new pizzas
+4. User is unable to update any profiles unless its their own
+5. User can create alist of friends and pizza
+6. User can give rating on any pizza, comment on any pizza and like or not like any comment
+
 
 to do - tests for new endpoints and documented / swagger
 
@@ -196,8 +199,6 @@ Evidence of file upload somewhere in your app.
 File upload is documented in readme and or swagger
 
 1. S3 bucket created
-2. User is able to upload pictures to a pizza they created
-3. User able to delete image as requested
-4. User can not delete or upload images to any other pizza unless they created it
+2. User is able to add or update their profile image only
 
 to do - tests and swagger 
