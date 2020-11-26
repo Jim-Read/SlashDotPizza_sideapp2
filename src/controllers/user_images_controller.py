@@ -14,7 +14,7 @@ user_images = Blueprint("user_images",  __name__, url_prefix="/users/<int:user_i
 @jwt_required
 @verify_user
 def user_image_create(user_id, user=None):
-    #user = User.query.filter_by(user_id=user_id, user_id=user.user_id).first()
+
     user = User.query.filter_by(user_id=user_id).first()
 
     if not user:
