@@ -19,6 +19,7 @@ def auth_register():
     user = User()
     user.email = user_fields["email"]
     user.password = bcrypt.generate_password_hash(user_fields["password"]).decode("utf-8")
+    user.user_name = user_fields["username"]
 
     db.session.add(user)
     db.session.commit()
@@ -34,7 +35,7 @@ def auth_login():
     user = User.query.filter_by(email=user_fields["email"]).first()
 
     if not user or not bcrypt.check_password_hash(user.password, user_fields["password"]):
-        return abort(401, description="Incorrect username and password")
+        return abort(401, description="Incorrect email address and password")
 
     expiry =  timedelta(days=1)
     access_token = create_access_token(identity=str(user.user_id), expires_delta=expiry)

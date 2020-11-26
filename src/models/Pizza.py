@@ -9,7 +9,7 @@ class Pizza(db.Model):
     description = db.Column(db.String())
     price = db.Column(db.Integer())
     location = db.Column(db.String())
-    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
+    #user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
 
     pizza_image = db.relationship("PizzaImage", backref="pizza", uselist=False)
 
